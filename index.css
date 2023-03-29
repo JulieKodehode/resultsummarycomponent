@@ -1,0 +1,235 @@
+/* CHECK OUT THIS*/
+@font-face {
+	font-family: "HankenGrotesk";
+	font-display: swap;
+	font-weight: 100 900;
+	src: url("assets/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+
+/* NEED TO MAKE SENSE OF THIS */
+:root {
+	/* Color  */
+	--color-neutral-100: hsl(0, 0%, 100%);
+	--color-neutral-200: hsl(221, 100%, 96%);
+	--color-neutral-300: hsl(241, 100%, 89%);
+	--color-neutral-700: hsl(224, 30%, 27%);
+
+	--color-primary-400: hsl(252, 100%, 67%);
+	--color-primary-500: hsla(256, 72%, 46%);
+	--color-secondary-400: hsl(241, 72%, 46%);
+	--color-secondary-500: hsl(241, 72%, 46%);
+
+	--gradient-primary: linear-gradient(var(--color-primary-400), var(--color-secondary-400));
+
+	--gradient-to-transparent: linear-gradient(
+		var(--color-primary-500),
+		hsl(var(--color-secondary-hsl-500), 0)
+	);
+
+	/* Figure something out - HSL */
+	--color-secondary-hsl-500: 241, 72%, 46%;
+	--color-neutral-hsl-100: 0, 0%, 100%;
+	--color-accent-1: 0, 100%, 67%;
+	--color-accent-2: 39, 100%, 56%;
+	--color-accent-3: 166, 100%, 37%;
+	--color-accent-4: 234, 85%, 45%;
+
+	/* Font */
+	--fontFamily-default: "HankenGrotesk", sans-serif;
+
+	--fontWeight-regular: 500;
+	--fontWeight-bold: 700;
+	--fontWeight-black: 800;
+
+	--fontSize-400: 1.125rem;
+	--fontSize-500: 1.25rem;
+	--fontSize-600: 1.5rem;
+	--fontSize-700: 1.75rem;
+	--fontSize-800: 2rem;
+	--fontSize-900: 5rem;
+}
+
+/* General */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	font: inherit;
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+body {
+	font-family: var(--fontFamily-default);
+	font-size: var(--fontSize-400);
+	color: var(--color-neutral-700);
+}
+
+/* Media query for body */
+@media (min-width: 600px) {
+	body {
+		min-height: 100vh;
+		display: grid;
+		place-items: center;
+	}
+}
+
+/* Utility - flex group */
+.flexGroup {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+/* Utility - grid flow */
+.gridFlow {
+	display: grid;
+	align-content: start;
+	gap: 1rem;
+}
+
+/* CHECK OUT THIS */
+.gridFlow[data-spacing="large"] {
+	gap: 2rem;
+}
+
+/* Section title */
+.sectionTitle {
+	font-weight: var(--fontWeight-bold);
+	font-size: var(--fontSize-600);
+}
+
+/* Button */
+.button {
+	color: var(--color-neutral-100);
+	line-height: 1;
+	background: var(--color-neutral-700);
+	padding: 1rem 2rem;
+	border: 0;
+	border-radius: 100vw;
+	cursor: pointer;
+}
+
+.button:hover,
+.button:focus-visible {
+	background: var(--gradient-primary);
+}
+
+/* Result summary (main) */
+.resultSummary {
+	--padding: 2.5rem;
+	--border-radius: 2rem;
+
+	max-width: 46rem;
+	display: grid;
+}
+
+/* Media query for resultSummary (main) */
+@media (min-width: 600px) {
+	.resultSummary {
+		margin-inline: 1rem;
+		grid-template-columns: 1fr 1fr;
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		box-shadow: 0.5rem 1rem 3rem hsl(var(--color-neutral-hsl-700), 0.2);
+	}
+}
+
+/* RESULTS (first section)*/
+.results {
+	color: hsl(var(--color-neutral-hsl-100), 0.7);
+	text-align: center;
+	padding: var(--padding) calc(var(--padding) * 1.5);
+	background: var(--gradient-primary);
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+/* Media query */
+@media (min-width: 600px) {
+	.results {
+		border-radius: var(--border-radius);
+	}
+}
+
+/* Result Score */
+.resultScore {
+	display: grid;
+	place-content: center;
+	width: 12rem;
+	margin-inline: auto;
+	background: var(--gradient-to-transparent);
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+}
+
+.resultScore span {
+	display: block;
+	font-size: var(--fontSize-900);
+	font-weight: var(--fontWeight-black);
+	line-height: 1;
+	color: var(--color-neutral-100);
+}
+
+/* Result rank */
+.resultRank {
+	color: var(--color-neutral-100);
+	font-size: var(--fontSize-700);
+	font-weight: var(--fontWeight-bold);
+}
+
+/* SUMMARY (Second summary) */
+.summary {
+	padding: var(--padding);
+}
+
+/* Summary Item */
+.summaryItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	background-color: hsl(var(--item-color), 0.1);
+}
+
+.summaryItem svg {
+	stroke: hsl(var(--item-color));
+}
+
+.summaryItem[data-item-type="accent1"] {
+	--item-color: var(--color-accent-1);
+}
+.summaryItem[data-item-type="accent2"] {
+	--item-color: var(--color-accent-2);
+}
+.summaryItem[data-item-type="accent3"] {
+	--item-color: var(--color-accent-3);
+}
+.summaryItem[data-item-type="accent4"] {
+	--item-color: var(--color-accent-4);
+}
+
+/* Summary item title */
+.summaryItemTitle {
+	color: hsl(var(--item-color));
+	font-weight: var(--fontWeight-bold);
+}
+
+/* Summary Score */
+.summaryScore {
+	font-weight: var(--fontWeight-black);
+	color: hsl(var(--color-neutral-hsl-700), 0.5);
+}
+
+.summaryScore span {
+	color: var(--color-neutral-700);
+}

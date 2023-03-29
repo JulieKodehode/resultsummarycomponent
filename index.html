@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+		<title>Frontend Mentor | Results summary component</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+
+	<body>
+		<main class="resultSummary">
+			<!-- Purple side -->
+			<section class="results gridFlow" data-spacing="large">
+				<h1 class="sectionTitle">Your result</h1>
+				<p class="resultScore"><span>76</span> of 100</p>
+
+				<div class="gridFlow">
+					<p class="resultRank">Great</p>
+					<p>You scored higher then 65% of the people who have taken these tests.</p>
+				</div>
+			</section>
+
+			<!-- White side -->
+			<section class="summary | gridFlow" data-spacing="large">
+				<h2 class="sectionTitle">Summary</h2>
+				<div class="gridFlow">
+					<!-- Reaction -->
+					<div class="summaryItem" data-item-type="accent1">
+						<div class="flexGroup">
+							<img src="assets/images/icon-reaction.svg" alt="" />
+							<h3 class="summaryItemTitle">Reaction</h3>
+						</div>
+						<p class="summaryScore"><span>80</span> / 100</p>
+					</div>
+
+					<!-- Memory -->
+					<div class="summaryItem" data-item-type="accent2">
+						<div class="flexGroup">
+							<img src="assets/images/icon-memory.svg" alt="" />
+							<h3 class="summaryItemTitle">Memory</h3>
+						</div>
+						<p class="summaryScore"><span>92</span> / 100</p>
+					</div>
+
+					<!-- Verbal -->
+					<div class="summaryItem" data-item-type="accent3">
+						<div class="flexGroup">
+							<img src="assets/images/icon-verbal.svg" alt="" />
+							<h3 class="summaryItemTitle">Verbal</h3>
+						</div>
+						<p class="summaryScore"><span>61</span> / 100</p>
+					</div>
+
+					<!-- Visual -->
+					<div class="summaryItem" data-item-type="accent4">
+						<div class="flexGroup">
+							<img src="assets/images/icon-visual.svg" alt="" />
+							<h3 class="summaryItemTitle">Visual</h3>
+						</div>
+						<p class="summaryScore"><span>72</span> / 100</p>
+					</div>
+				</div>
+				<button class="button">Continue</button>
+			</section>
+		</main>
+		<!-- <footer class="credits">
+			<p>
+				Challenge by
+				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded
+				by <a href="https://github.com/juliekodehode">Julie</a>.
+			</p>
+		</footer> -->
+	</body>
+</html>
