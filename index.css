@@ -12,7 +12,6 @@
 	--color-neutral-100: hsl(0, 0%, 100%);
 	--color-neutral-200: hsl(221, 100%, 96%);
 	--color-neutral-300: hsl(241, 100%, 89%);
-	--color-neutral-700: hsl(224, 30%, 27%);
 
 	--color-primary-400: hsl(252, 100%, 67%);
 	--color-primary-500: hsla(256, 72%, 46%);
@@ -27,6 +26,7 @@
 	);
 
 	/* Figure something out - HSL */
+	--color-neutral-hsl-700: 224, 30%, 27%;
 	--color-secondary-hsl-500: 241, 72%, 46%;
 	--color-neutral-hsl-100: 0, 0%, 100%;
 	--color-accent-1: 0, 100%, 67%;
